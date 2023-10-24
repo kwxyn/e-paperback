@@ -130,12 +130,7 @@ th {
 #user-table{
 	width: 100%;
 }
-/*================================================================*/
-/*endregion*/
 
-
-/*region Footer*/
-/*================================================================*/
 footer {
 	position: absolute;
 	bottom: 0;
@@ -144,5 +139,3 @@ footer {
 	line-height: 60px; /* Vertically center the text there */
     color: darkgrey;
 }
-/*================================================================*/
-/*endregion*/

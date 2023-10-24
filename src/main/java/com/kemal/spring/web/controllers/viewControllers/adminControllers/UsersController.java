@@ -12,7 +12,9 @@ import com.kemal.spring.service.searching.UserSearchParameters;
 import com.kemal.spring.service.searching.UserSearchResult;
 import com.kemal.spring.web.dto.UserDto;
 import com.kemal.spring.web.dto.UserUpdateDto;
-import com.kemal.spring.web.paging.InitialPagingSizes;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
 import com.kemal.spring.web.paging.Pager;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -31,9 +33,6 @@ import static com.kemal.spring.web.paging.InitialPagingSizes.*;
 import static org.springframework.data.domain.PageRequest.of;
 import static org.springframework.data.domain.Sort.Direction.ASC;
 
-/**
- * Created by Keno&Kemo on 20.11.2017..
- */
 @Controller
 @RequestMapping("/adminPage")
 public class UsersController {
@@ -166,4 +165,13 @@ public class UsersController {
         redirectAttributes.addFlashAttribute("userHasBeenSaved", true);
         return REDIRECT_ADMIN_PAGE_USERS;
     }
+
+    @GetMapping("/getEBooks")
+    public ResponseEntity<String> getEbooks() {
+        String apiUrl = "http://ebook.ap-southeast-1.elasticbeanstalk.com/ebook/all";
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+        return response;
+    }
+
 }

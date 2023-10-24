@@ -1,6 +1,4 @@
-/**
- * Created by Keno&Kemo on 10.12.2017..
- */
+
 const getJsonUsers = "/adminPage/json-users";
 const token = $('#_csrf').attr('content');
 const header = $('#_csrf_header').attr('content');
