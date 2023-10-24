@@ -168,7 +168,7 @@ public class UsersController {
 
     @GetMapping("/getEBooks")
     public ResponseEntity<String> getEbooks() {
-        String apiUrl = "http://ebook.ap-southeast-1.elasticbeanstalk.com/ebook/all";
+        String apiUrl = "http://ebook1.ap-southeast-1.elasticbeanstalk.com/ebook/all";
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
         return response;
