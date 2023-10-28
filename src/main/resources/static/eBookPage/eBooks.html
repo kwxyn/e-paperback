@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #3498db; /* Blue */
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light Gray */
+    }
+
+    tr:nth-child(odd) {
+        background-color: #e0e0e0; /* Slightly darker Gray */
+    }
+
+    td {
+        color: #555;
+    }
+</style>
+<head th:replace="fragments/head :: head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Books Management</title>
+</head>
+<body>
+<div th:replace="fragments/header :: nav"></div>
+<h1>E-Books Management</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Author</th>
+    </tr>
+    </thead>
+    <tbody id="ebookTableBody">
+    <!-- Book data will be inserted here dynamically -->
+    </tbody>
+</table>
+
+<script>
+    // Function to populate the table with JSON data
+    function populateTable() {
+        // Make an AJAX request to fetch the JSON data
+        fetch('http://e-paperback.ap-southeast-1.elasticbeanstalk.com/adminPage/getEBooks')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('ebookTableBody');
+
+                // Iterate through the data and create table rows
+                data.forEach(function (ebook) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                            <td>${ebook.title}</td>
+                            <td>$${ebook.price}</td>
+                            <td>${ebook.author}</td>
+                        `;
+
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Call the populateTable function to display the JSON data in the table
+    populateTable();
+</script>
+</body>
+</html>
