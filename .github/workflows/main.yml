@@ -33,4 +33,3 @@ jobs:
             environment_name: E-paperback-env
             version_label: ${{github.SHA}}
             region: ap-southeast-1
-            deployment_package: deploy.zip
