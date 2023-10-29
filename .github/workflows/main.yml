@@ -21,6 +21,7 @@ jobs:
         version_label: 2f51ab1eefda626d8e9231c7b63a66a9834b6079
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+        region: ap-southeast-1
         wait_for_deploy: true
         recovery_wait_time: 30
         use_existing_version_if_available: true
