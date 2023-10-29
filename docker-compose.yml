@@ -1,5 +1,9 @@
 version: '4.1.0'
 services:
+  eb-docker-compose-log:
+    image: aws/aws-eb-docker-compose-logs
+    volumes:
+      - /var/log/containers:/var/log/containers
   deploy:
     build:
       context: .
