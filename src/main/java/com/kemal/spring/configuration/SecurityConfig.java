@@ -21,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.userDetailsServiceImpl = userDetailsServiceImpl;
     }
 
+
     //Beans
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
