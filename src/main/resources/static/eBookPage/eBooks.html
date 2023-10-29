@@ -54,7 +54,7 @@
     // Function to populate the table with JSON data
     function populateTable() {
         // Make an AJAX request to fetch the JSON data
-        fetch('http://e-paperback.ap-southeast-1.elasticbeanstalk.com/adminPage/getEBooks')
+        fetch('http://ebook1.ap-southeast-1.elasticbeanstalk.com/ebook/all')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('ebookTableBody');
