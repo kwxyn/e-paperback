@@ -20,7 +20,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     private final UserService userService;
     private final RoleService roleService;
 
-    @Autowired
+
     private  BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public DataLoader(UserService userService, RoleService roleService) {

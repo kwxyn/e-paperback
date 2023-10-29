@@ -23,7 +23,7 @@ import static java.util.Collections.emptyList;
 @Service
 public class UserService {
 
-    @Autowired
+
     private  BCryptPasswordEncoder bCryptPasswordEncoder;
     private final UserRepository userRepository;
     private final RoleService roleService;

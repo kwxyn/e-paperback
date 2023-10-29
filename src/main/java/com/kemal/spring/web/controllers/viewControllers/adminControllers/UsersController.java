@@ -108,6 +108,14 @@ public class UsersController {
         return response;
     }
 
+    @GetMapping("/Payments")
+    public ResponseEntity<String> getPayments() {
+        String apiUrl = "http://ebookpayment1.ap-southeast-1.elasticbeanstalk.com/purchase/all";
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+        return response;
+    }
+
     @GetMapping("/users/{id}")
     public String getEditUserForm(@PathVariable Long id, Model model) {
         UserUpdateDto userUpdateDto = userUpdateDtoService.findById(id);
