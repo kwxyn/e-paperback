@@ -30,7 +30,7 @@ jobs:
             aws_access_key: ${{ secrets.ACC_ACCESS_KEY }}
             aws_secret_key: ${{ secrets.ACC_SECRET_ACCESS_KEY }}
             application_name: E-paperback
-            environment_name: E-paperback-env
+            environment_name: E-paperback
             version_label: ${{github.SHA}}
             region: ap-southeast-1
             deployment_package: deploy.zip
