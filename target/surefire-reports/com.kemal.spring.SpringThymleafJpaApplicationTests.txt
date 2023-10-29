@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: com.kemal.spring.SpringThymleafJpaApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.595 s - in com.kemal.spring.SpringThymleafJpaApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 28.881 s <<< FAILURE! - in com.kemal.spring.SpringThymleafJpaApplicationTests
+contextLoads  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [role.UK_8sewwnpamngi6b1dwaa88askk]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ROLE_ADMIN' for key 'role.UK_8sewwnpamngi6b1dwaa88askk'
+

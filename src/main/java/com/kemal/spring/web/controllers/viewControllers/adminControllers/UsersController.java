@@ -100,6 +100,14 @@ public class UsersController {
         return modelAndView;
     }
 
+    @GetMapping("/Books")
+    public ResponseEntity<String> getBooks() {
+        String apiUrl = "http://ebook1.ap-southeast-1.elasticbeanstalk.com/ebook/all";
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
+        return response;
+    }
+
     @GetMapping("/users/{id}")
     public String getEditUserForm(@PathVariable Long id, Model model) {
         UserUpdateDto userUpdateDto = userUpdateDtoService.findById(id);
@@ -166,12 +174,5 @@ public class UsersController {
         return REDIRECT_ADMIN_PAGE_USERS;
     }
 
-    @GetMapping("/getEBooks")
-    public ResponseEntity<String> getEbooks() {
-        String apiUrl = "http://ebook1.ap-southeast-1.elasticbeanstalk.com/ebook/all";
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.getForEntity(apiUrl, String.class);
-        return response;
-    }
 
 }

@@ -12,27 +12,6 @@
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--            <ul class="navbar-nav mr-auto">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/index}" href="/index">Home <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item ">-->
-<!--                    <a class="nav-link" href="#">About us</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">Services</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">Prices</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">Contact us</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-
-
             <ul class="navbar-nav ml-auto" id="users-nav-item" sec:authorize="isAuthenticated()">
 
                 <!--==============================================================================-->
@@ -77,7 +56,7 @@
 
                 <li class="nav-item d-flex">
                     <i class="align-self-center fas fa-user-cog" style="color: white;"></i>
-                    <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/eBookPage/eBooks.html">
+                    <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/adminPage/Books">
                         Manage eBook
                     </a>
                 </li>
@@ -114,4 +93,5 @@
 
     <div th:replace="fragments/jsScripts :: scripts"></div>
 </body>
+
 </html>
